@@ -7,11 +7,13 @@
 
 using namespace std;
 
+/* I don't feel like typing map<int, int> and stack<int> a lot. */
 typedef map<int, int>Map;
 typedef stack<int>Stack;
 
 class Interp
 {
+    /* The interpreter class. Contains everything needed to interpret a Brainfuck file. */
     public:
         Interp(string text);
         ~Interp();
