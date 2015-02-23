@@ -1,0 +1,5 @@
+
+Week 6:
+    -Created project repo
+    -Added basic layout for the project
+    -Researched genetic programming algorithms

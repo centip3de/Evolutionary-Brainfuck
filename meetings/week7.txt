@@ -1,0 +1,6 @@
+
+Week 7:
+    -Wrote Brainfuck interpreter
+    -Updated project layout
+    -Fixed README
+    -Added basic regression test for interpreter
