@@ -58,7 +58,6 @@ int Interp::endBrace()
     if(brace != braceMap.end())
     {
         int second = brace->second;
-        cout << "Returning " << second << " for brace at " << pos << endl;
         return second;
     }
     else
@@ -89,7 +88,6 @@ void Interp::buildBraceMap()
             int lbrace = lbrace_stack.top();
             lbrace_stack.pop();
             
-            cout << "Attaching brace at, " << lbrace << " to brace at " << i << endl;
             braceMap.insert(pair<int, int>(lbrace, i));
         }
     }
