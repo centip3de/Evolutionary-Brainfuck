@@ -1,13 +1,15 @@
-CXX = g++
-CXXFLAGS = -g -std=c++11
+CC = g++
+CCFLAGS = -g -std=c++11
+INCLUDE_FLAGS = -I ../../include/
 
 %.o: %.cpp
-	$(CXX) -c $(CXXFLAGS) $<
+	$(CC) -c $(INCLUDE_FLAGS) $(CCFLAGS) $<
 
 all: interp
 
 interp: interp.o 
-	$(CXX) -o $@ interp.o 
+	$(CC) -o $@ interp.o 
 
 clean: 
 	$(RM) *.o *.gch *.swp .DS_Store interp 
+
