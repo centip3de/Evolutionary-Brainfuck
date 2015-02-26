@@ -1,3 +1,7 @@
 
 Week 8:
-    -
+    -Restructured layout (again)
+    -Added single Makefile and removed others
+    -Added basic debugging support
+    -Added initial baseline reporting
+    -Replace unnecessary print statements with debug statements
