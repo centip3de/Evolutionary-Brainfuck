@@ -1,5 +1,5 @@
-#ifndef _DEBUG_HPP_
-#define _DEBUG_HPP_
+#ifndef DEBUG_HPP_
+#define DEBUG_HPP_
 
 using namespace std;
 
