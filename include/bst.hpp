@@ -9,7 +9,7 @@ class BinaryTree
         BinaryTree(Node node);
         ~BinaryTree();
         Node search(Node node);
-        bool insert(Node node);
+        bool insert(Node * root, Node * node);
         bool remove(Node node);
 
     private:

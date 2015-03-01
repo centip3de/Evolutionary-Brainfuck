@@ -10,19 +10,51 @@ BinaryTree::~BinaryTree()
 {
 }
 
-Node search(Node node)
+Node BinaryTree::search(Node node)
 {
     // Placeholder
     return node;
 }
 
-bool insert(Node node)
+bool BinaryTree::insert(Node * root, Node * node)
 {
-    // Placeholder
-    return true;
+    if(root->parent == NULL)
+    {
+        root = node;
+        return true;
+    }
+    else
+    {
+        if(node->time < root->time)
+        {
+            if(root->left == NULL)
+            {
+                root->left = node;
+                return true;
+            }
+            else
+            {
+                insert(root->left, node);
+            }
+        }
+        else if(node->time > root->time)
+        {
+            if(root->right == NULL)
+            {
+                root->right = node;
+                return true;
+            }
+            else
+            {
+                insert(root->right, node);
+            }
+        }
+   }
+
+   return false;
 }
 
-bool remove(Node node)
+bool BinaryTree::remove(Node node)
 {
     // Placeholder
     return true;
