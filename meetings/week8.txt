@@ -1,7 +1,13 @@
 
 Week 8:
-    -Restructured layout (again)
     -Added single Makefile and removed others
+    -Added Makefile support for BinaryTree
     -Added basic debugging support
     -Added initial baseline reporting
+    -Added the node datatype (for use with a binary tree)
+    -Added the BinaryTree datatype 
+    -Added docstrings for entire bst.cpp file
+    -Implemented proper binary insertion based on program execution time
+    -Implemented proper binary search that accounts for both program execution time and program length
     -Replace unnecessary print statements with debug statements
+    -Restructured layout (again)
