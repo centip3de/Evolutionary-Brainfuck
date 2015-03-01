@@ -10,11 +10,11 @@ class BinaryTree
         BinaryTree(Node * node);
         ~BinaryTree();
 
-        Node * search(unsigned int time);
-        Node * search(unsigned int time, Node * node);
+        Node * search(unsigned int time, int length);
+        Node * search(unsigned int time, int length, Node * node);
 
-        bool insert(unsigned int time);
-        bool insert(Node * root, unsigned int time);
+        bool insert(unsigned int time, int length);
+        bool insert(Node * root, unsigned int time, int length);
 
     private:
         Node * root;
