@@ -40,6 +40,11 @@ Node * BinaryTree::search(unsigned int time, Node * node)
    return NULL;
 }
 
+bool BinaryTree::insert(Node * node)
+{
+    return insert(root, node);
+}
+
 bool BinaryTree::insert(Node * root, Node * node)
 {
     if(root->parent == NULL)
