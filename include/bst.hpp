@@ -8,9 +8,9 @@ class BinaryTree
     public:
         BinaryTree(Node node);
         ~BinaryTree();
-        Node search(Node node);
+        Node * search(unsigned int time, Node * node);
         bool insert(Node * root, Node * node);
-        bool remove(Node node);
+        bool remove(Node * node);
 
     private:
         Node root;

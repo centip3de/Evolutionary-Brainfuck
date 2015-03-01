@@ -10,10 +10,24 @@ BinaryTree::~BinaryTree()
 {
 }
 
-Node BinaryTree::search(Node node)
+Node * BinaryTree::search(unsigned int time, Node * node)
 {
-    // Placeholder
-    return node;
+    if(node != NULL)
+    {
+        if(time == node->time)
+        {
+            return node;
+        }
+        else if(time < node->time)
+        {
+            search(time, node->left);
+        }
+        else
+        {
+            search(time, node->right);
+        }
+   }
+   return NULL;
 }
 
 bool BinaryTree::insert(Node * root, Node * node)
@@ -54,7 +68,7 @@ bool BinaryTree::insert(Node * root, Node * node)
    return false;
 }
 
-bool BinaryTree::remove(Node node)
+bool BinaryTree::remove(Node * node)
 {
     // Placeholder
     return true;
