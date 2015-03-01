@@ -5,7 +5,7 @@
 
 #include "interp.hpp"
 #include "debug.hpp"
-#include "node.hpp"
+#include "bst.hpp"
 
 using namespace std;
 
