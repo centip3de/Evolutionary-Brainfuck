@@ -86,62 +86,74 @@ Node * BinaryTree::search(unsigned int time, Node * node)
    return NULL;
 }
 
-bool BinaryTree::insert(Node * node)
+bool BinaryTree::insert(unsigned int time)
 {
-    /*  Overloaded version of the insert function, that starts the 
+    /*  Overloaded version of the insert function that starts the 
         insertion at the root node.
 
         Args:
-            Node * node - The node to insert
+            unsigned int time - The time to insert;
 
         Returns:
             True if the insertion was successful, false if it wasn't.
     */
 
-    return insert(root, node);
+    return insert(root, time);
 }
 
-bool BinaryTree::insert(Node * root, Node * node)
+bool BinaryTree::insert(Node * root, unsigned int time)
 {
-    /*  Inserts the given node into the tree, starting at the passed in 'root'.
+    /*  Inserts the given time into the tree, starting at the passed in 'root'.
         
         Args:
-            Node * root - The place to insert under
+            unsigned int time - The time to insert
             Node * node - The node to insert
 
         Returns:
             True if the insertion was successful, false if it wasn't
     */
 
-    if(root->parent == NULL)
+    if(root == NULL)
     {
-        root = node;
+        root = new Node;
+        root->time = time;
+        root->left = NULL;
+        root->right = NULL;
+        root->parent = NULL;
         return true;
     }
     else
     {
-        if(node->time < root->time)
+        if(time < root->time)
         {
             if(root->left == NULL)
             {
-                root->left = node;
+                root->left = new Node;
+                root->left->time = time;
+                root->left->left = NULL;
+                root->left->right = NULL;
+                root->left->parent = root->left;
                 return true;
             }
             else
             {
-                insert(root->left, node);
+                insert(root->left, time);
             }
         }
-        else if(node->time > root->time)
+        else if(time > root->time)
         {
             if(root->right == NULL)
             {
-                root->right = node;
+                root->right = new Node;
+                root->right->time = time;
+                root->right->left = NULL;
+                root->right->right = NULL;
+                root->right->parent = root->right;
                 return true;
             }
             else
             {
-                insert(root->right, node);
+                insert(root->right, time);
             }
         }
    }

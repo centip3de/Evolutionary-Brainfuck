@@ -13,8 +13,8 @@ class BinaryTree
         Node * search(unsigned int time);
         Node * search(unsigned int time, Node * node);
 
-        bool insert(Node * node);
-        bool insert(Node * root, Node * node);
+        bool insert(unsigned int time);
+        bool insert(Node * root, unsigned int time);
 
     private:
         Node * root;
