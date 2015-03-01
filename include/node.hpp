@@ -1,21 +1,17 @@
 #ifndef NODE_HPP_
 #define NODE_HPP_
 
-class Node
+#include <string>
+
+struct Node
 {
-    public:
-        /* Constructors/destructors */
-        Node(unsigned int time, int length, std::string program, Node parent);
-        ~Node();
+    Node * parent;
+    Node * left;
+    Node * right;
 
-    private:
-        Node * parent;
-        Node * left;
-        Node * right;
-
-        unsigned int time;
-        std::string program;
-        int length;
+    unsigned int time;
+    std::string program;
+    int length;
 };
 
 #endif
