@@ -1,13 +1,23 @@
 
 #include "bst.hpp"
 
-BinaryTree::BinaryTree(Node node)
+BinaryTree::BinaryTree()
+{
+    root = NULL;
+}
+
+BinaryTree::BinaryTree(Node * node)
 {
     root = node;
 }
 
 BinaryTree::~BinaryTree()
 {
+}
+
+Node * BinaryTree::search(unsigned int time)
+{
+    return search(time, root);
 }
 
 Node * BinaryTree::search(unsigned int time, Node * node)
@@ -70,6 +80,5 @@ bool BinaryTree::insert(Node * root, Node * node)
 
 bool BinaryTree::remove(Node * node)
 {
-    // Placeholder
     return true;
 }
