@@ -1,4 +1,3 @@
-
 #include "bst.hpp"
 
 BinaryTree::BinaryTree()
@@ -83,7 +82,3 @@ bool BinaryTree::insert(Node * root, Node * node)
    return false;
 }
 
-bool BinaryTree::remove(Node * node)
-{
-    return true;
-}

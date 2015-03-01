@@ -16,8 +16,6 @@ class BinaryTree
         bool insert(Node * node);
         bool insert(Node * root, Node * node);
 
-        bool remove(Node * node);
-
     private:
         Node * root;
 };
