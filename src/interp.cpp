@@ -16,9 +16,12 @@ Interp::Interp(string text)
             A new object of this type.
     */
 
-    this->text = text;
-    pos = 0;
-    ptr = array;
+    this->text  = text;
+    pos         = 0;
+    ptr         = array;
+    output      = "";
+    status      = 0;
+
     memset(array, 0, 30000);
     buildBraceMap();
 }
@@ -31,6 +34,16 @@ Interp::~Interp()
         Returns:
             None
     */
+}
+
+int Interp::getStatus()
+{
+    return status;
+}
+
+string Interp::getOutput()
+{
+    return output;
 }
 
 bool Interp::atEnd()
@@ -62,6 +75,7 @@ int Interp::endBrace()
     }
     else
     {
+        status = -1;
         return -1;
     }
 }
@@ -150,6 +164,7 @@ void Interp::execute()
         }
         else if(token == '.')
         {
+            output += *ptr;
             putchar(*ptr);
         }
         else if(token == ',')

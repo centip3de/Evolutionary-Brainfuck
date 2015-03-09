@@ -18,6 +18,8 @@ class Interp
         Interp(string text);
         ~Interp();
         char getToken();
+        int getStatus();
+        string getOutput();
         bool atEnd();
         bool testWhile();
         int endBrace();
@@ -27,9 +29,11 @@ class Interp
     private:
         string text;
         int pos;
+        int status;
         char * ptr;
         char array[30000];
         Map braceMap;
+        string output;
 
 };
 #endif
