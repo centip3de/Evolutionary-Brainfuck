@@ -2,6 +2,7 @@
 #include <string>
 #include <cstring> /* For memset */
 #include <fstream>
+#include <vector>
 
 #include "interp.hpp"
 
@@ -16,13 +17,16 @@ Interp::Interp(string text)
             A new object of this type.
     */
 
+    vector<char> tmp(30000);
+
+
+    array       = tmp;
     this->text  = text;
     pos         = 0;
-    ptr         = array;
+    ptr         = array.begin();
     output      = "";
     status      = 0;
 
-    memset(array, 0, 30000);
     buildBraceMap();
 }
 
@@ -152,7 +156,15 @@ void Interp::execute()
         }
         else if(token == '<')
         {
-            --ptr;
+            if(ptr != array.begin())
+            {
+                --ptr;
+            }
+            else
+            {
+                status = -1;
+                break;
+            }
         }
         else if(token == '+')
         {
@@ -169,7 +181,7 @@ void Interp::execute()
         }
         else if(token == ',')
         {
-            (*ptr) = getchar();
+            *ptr = getchar();
         }
         else if(token == '[')
         {

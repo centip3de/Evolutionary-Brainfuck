@@ -4,6 +4,7 @@
 #include <string>
 #include <map>
 #include <stack>
+#include <vector>
 
 using namespace std;
 
@@ -30,8 +31,8 @@ class Interp
         string text;
         int pos;
         int status;
-        char * ptr;
-        char array[30000];
+        vector<char>::iterator ptr;
+        vector<char> array;
         Map braceMap;
         string output;
 
